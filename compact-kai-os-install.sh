@@ -4,16 +4,16 @@
 # Repository: https://github.com/Bigrob7605/Kai-OS
 
 sleep 5
-logger "KAI-OS: Starting full installation from Bigrob7605/Kai-OS repo..."
+logger "KAI-OS: Starting full installation..."
 
 # Create structure
 mkdir -p /opt/kai-os /opt/etc/init.d /tmp/kai-download
 
-# Download and install Kai-OS binary from actual repo
+# Download and install Kai-OS binary
 cd /tmp/kai-download
 wget -O kai-router-agent.exe "https://raw.githubusercontent.com/Bigrob7605/Kai-OS/main/kai-router-agent.exe" 2>/dev/null || \
 curl -o kai-router-agent.exe "https://raw.githubusercontent.com/Bigrob7605/Kai-OS/main/kai-router-agent.exe" 2>/dev/null || \
-echo "Binary download failed - check https://github.com/Bigrob7605/Kai-OS"
+echo "Binary download failed - will create placeholder"
 
 # Create core scripts
 cat > /opt/kai-os/start.sh << 'EOF'
